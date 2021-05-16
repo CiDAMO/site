@@ -1,4 +1,4 @@
-baseURL = "http://examplesite.org"
+baseURL = "http://cidamo.netlify.app"
 disableLanguages = []
 disqusShortname = ""
 googleAnalytics = ""

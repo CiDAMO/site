@@ -7,11 +7,8 @@ sections:
 - type: heading
   label: Homepage
 - type: document
-  path: exampleSite/content/english/_index.md
-  label: Homepage (en)
-- type: document
-  path: exampleSite/content/french/_index.md
-  label: Homepage (fr)
+  path: exampleSite/content/portugues/_index.md
+  label: Homepage
 - type: heading
   label: Blog Post
 - type: directory

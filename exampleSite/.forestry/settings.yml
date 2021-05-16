@@ -12,7 +12,7 @@ sections:
 - type: heading
   label: Blog Post
 - type: directory
-  path: exampleSite/content/portuguese/blog
+  path: exampleSite/content/portugues/blog
   label: Post
   create: documents
   match: "**/*"

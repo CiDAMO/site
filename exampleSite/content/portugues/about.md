@@ -1,12 +1,12 @@
 ---
-title: "About Our Company"
+title: "Sobre o CiDAMO"
 description: "this is meta description"
 bg_image: "images/feature-bg.jpg"
 layout: "about"
 draft: false
 menu:
   main:
-    name: "About"
+    name: "Sobre"
     weight: 2
 
 
@@ -14,53 +14,49 @@ menu:
 about:
   enable : true
   image : "images/company/about.jpg"
-  title : "We strive to be the best and <br> make awesome work."
-  content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius enim, accusantium repellat ex autem numquam iure officiis facere vitae itaque.
-
-
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam qui vel cupiditate exercitationem, ea fuga est
-  velit nulla culpa modi quis iste tempora non, suscipit repellendus labore voluptatem dicta amet? Lorem ipsum
-  dolor sit amet, consectetur adipisicing elit. Provident, neque!"
+  title : "Estudo, pesquisa e aplicação"
+  content: "O CiDAMO é um grupo de estudo, pesquisa e desenvolvimento nas áreas de Ciência de Dados, Aprendizagem de Máquina e Otimização. O CiDAMO têm por objetivos produzir pesquisa de ponta em temas multidisciplinares, capacitar e aperfeiçoar a próxima geração de profissionais nas áreas relacionadas à ciência de dados e otimização, além de fortalecer a relação entre a academia e o mercado de trabalho por meio de troca de conhecimentos e crescimento mútuo.<br><br>
+  Os fundadores do CiDAMO são os professores **Abel Soares Siqueira** e **Lucas Garcia Pedroso** do departamento de matemática da UFPR."
 
   button:
-    enable : true
+    enable : false
     label : "Download Company Profile"
     link : "#"
 
-  funfacts:
-  # funfacts loop
-  - icon : "ion-ios-flask-outline" #ionicon pack v2 : https://ionicons.com/v2/
-    name : "Completed Projects"
-    count : "349"
+  # funfacts:
+  # # funfacts loop
+  # - icon : "ion-ios-flask-outline" #ionicon pack v2 : https://ionicons.com/v2/
+  #   name : "Completed Projects"
+  #   count : "349"
 
-  # funfacts loop
-  - icon : "ion-ios-flame-outline" #ionicon pack v2 : https://ionicons.com/v2/
-    name : "Lines Of Code"
-    count : "35000"
+  # # funfacts loop
+  # - icon : "ion-ios-flame-outline" #ionicon pack v2 : https://ionicons.com/v2/
+  #   name : "Lines Of Code"
+  #   count : "35000"
 
-  # funfacts loop
-  - icon : "ion-ios-pint-outline" #ionicon pack v2 : https://ionicons.com/v2/
-    name : "Satisfied Customer"
-    count : "70"
+  # # funfacts loop
+  # - icon : "ion-ios-pint-outline" #ionicon pack v2 : https://ionicons.com/v2/
+  #   name : "Satisfied Customer"
+  #   count : "70"
 
-  # funfacts loop
-  - icon : "ion-ios-wineglass-outline" #ionicon pack v2 : https://ionicons.com/v2/
-    name : "Awards Winner"
-    count : "10"
+  # # funfacts loop
+  # - icon : "ion-ios-wineglass-outline" #ionicon pack v2 : https://ionicons.com/v2/
+  #   name : "Awards Winner"
+  #   count : "10"
 
-  # funfacts loop
-  - icon : "ion-ios-chatboxes-outline" #ionicon pack v2 : https://ionicons.com/v2/
-    name : "Satisfied Customer"
-    count : "75"
+  # # funfacts loop
+  # - icon : "ion-ios-chatboxes-outline" #ionicon pack v2 : https://ionicons.com/v2/
+  #   name : "Satisfied Customer"
+  #   count : "75"
 
-  # funfacts loop
-  - icon : "ion-ios-body-outline" #ionicon pack v2 : https://ionicons.com/v2/
-    name : "Awards Winner"
-    count : "20"
+  # # funfacts loop
+  # - icon : "ion-ios-body-outline" #ionicon pack v2 : https://ionicons.com/v2/
+  #   name : "Awards Winner"
+  #   count : "20"
 
 ################################ feature #####################################
 features:
-  enable : true
+  enable : false
   title : "We are indepented Design & Development Agency"
   feature_item:
   # feature item loop
@@ -96,11 +92,11 @@ features:
 
 #################################### testimonial & mission vision #######################################
 testimonial:
-  enable : true
+  enable : false
   # testimonial content comes from "data/*/homepage.yml" file
 
 mission_vision:
-  enable : true
+  enable : false
   tabs:
   # tab item loop
   - name : "Vision"
@@ -138,6 +134,6 @@ mission_vision:
 
 ############################# call to action #################################
 cta:
-  enable : true
+  enable : false
   # call to action content comes from "_index.md"
 ---

@@ -1,0 +1,61 @@
+.equipe-card {
+  min-height: 18em;
+  padding: 10px;
+  margin-bottom: 20px;
+  transition: 600ms;
+  border-radius: 5px;
+
+  &:hover {
+    transition: 600ms;
+    background-color: #1893f8;
+    color: white;
+  }
+}
+
+.equipe-card img {
+  max-width: 10em;
+}
+
+.equipe-card span {
+  font-size: 1.3em;
+  font-weight: bold;
+  font-family: 'Nunito', sans-serif;
+}
+
+.equipe-single-page {
+  img {
+    border-radius: 5px;
+  }
+	.equipe-details {
+		h4 {
+			margin-bottom: 20px;
+			padding-bottom: 10px;
+			border-bottom: 2px dashed $border-color;
+		}
+
+		span {
+			color: #838383;
+			width: 180px;
+			display: inline-block;
+		}
+
+		strong {
+			color: #313131;
+			font-weight: normal;
+		}
+
+    .equipe-social {
+      .fa {
+        margin: 2px;
+        padding: 5px;
+        border-radius: 5px;
+        background-color: #1893f8;
+        color: white;
+      }
+      .fa-gray {
+        background-color: #999;
+        color: white;
+      }
+    }
+	}
+}

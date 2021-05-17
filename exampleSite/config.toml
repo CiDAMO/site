@@ -37,10 +37,6 @@ weight = 5
 URL = "contact"
 name = "Contact"
 weight = 6
-[[languages.ptbr.menu.main]]
-hasChildren = true
-name = "More"
-weight = 5
 [languages.de]
 contentDir = "content/german"
 copyright = "Copyright &copy; 2021 [Themefisher](https://themefisher.com). Alle Rechte vorbehalten."
@@ -243,6 +239,9 @@ link = "plugins/shuffle/shuffle.min.js"
 [[params.plugins.js]]
 attributes = "defer"
 link = "plugins/google-map/gmap.js"
+[[params.plugins.js]]
+attributes = ""
+link = "https://kit.fontawesome.com/d17d5e5245.js"
 [params.preloader]
 enable = true
 preloader = ""

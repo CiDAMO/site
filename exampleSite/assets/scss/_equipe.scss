@@ -51,8 +51,14 @@
         border-radius: 5px;
         background-color: #1893f8;
         color: white;
+        transition: 400ms;
+
+        &:hover {
+          background-color: #0927eb;
+          color: gold;
+        }
       }
-      .fa-gray {
+      .fa-gray, .fa-gray:hover {
         background-color: #999;
         color: white;
       }

@@ -1,178 +1,36 @@
 baseURL = "http://cidamo.netlify.app"
 defaultContentLanguage = "ptbr"
-disableLanguages = ["en", "it", "fr", "de"]
+disableLanguages = []
 disqusShortname = ""
 googleAnalytics = ""
 paginate = "4"
 summaryLength = "30"
 theme = "airspace-hugo"
 title = "CiDAMO"
+
 [languages.ptbr]
 contentDir = "content/portugues"
-copyright = "Copyright &copy; 2021 Abel Soares Siqueira\n Tema [Themefisher](https://themefisher.com)."
+copyright = "Copyright &copy; 2021 Abel Soares Siqueira"
 languageCode = "pt-BR"
 languageName = "Português"
 weight = 1
 [[languages.ptbr.menu.footer]]
-URL = "about"
-name = "About"
+URL = "sobre"
+name = "Sobre"
 weight = 1
 [[languages.ptbr.menu.footer]]
-URL = "project"
-name = "Project"
+URL = "equipe"
+name = "Equipe"
 weight = 2
 [[languages.ptbr.menu.footer]]
-URL = "service"
-name = "Service"
+URL = "eventos"
+name = "Eventos"
 weight = 3
 [[languages.ptbr.menu.footer]]
-URL = "pricing"
-name = "Pricing"
+URL = "blog"
+name = "Blog"
 weight = 4
-[[languages.ptbr.menu.footer]]
-URL = "faq"
-name = "FAQ"
-weight = 5
-[[languages.ptbr.menu.footer]]
-URL = "contact"
-name = "Contact"
-weight = 6
-[languages.de]
-contentDir = "content/german"
-copyright = "Copyright &copy; 2021 [Themefisher](https://themefisher.com). Alle Rechte vorbehalten."
-languageCode = "de-DE"
-languageName = "Deutsch"
-weight = 3
-[[languages.de.menu.footer]]
-URL = "about"
-name = "Über"
-weight = 1
-[[languages.de.menu.footer]]
-URL = "project"
-name = "Projekt"
-weight = 2
-[[languages.de.menu.footer]]
-URL = "service"
-name = "Dienstleistung"
-weight = 3
-[[languages.de.menu.footer]]
-URL = "pricing"
-name = "Preise"
-weight = 4
-[[languages.de.menu.footer]]
-URL = "faq"
-name = "Häufige Fragen"
-weight = 5
-[[languages.de.menu.footer]]
-URL = "contact"
-name = "Kontakt"
-weight = 6
-[[languages.de.menu.main]]
-hasChildren = true
-name = "Mehr"
-weight = 5
-[languages.en]
-contentDir = "content/english"
-copyright = "Copyright &copy; 2021 [Themefisher](https://themefisher.com). All Rights Reserved."
-languageCode = "en-US"
-languageName = "English"
-weight = 1
-[[languages.en.menu.footer]]
-URL = "about"
-name = "About"
-weight = 1
-[[languages.en.menu.footer]]
-URL = "project"
-name = "Project"
-weight = 2
-[[languages.en.menu.footer]]
-URL = "service"
-name = "Service"
-weight = 3
-[[languages.en.menu.footer]]
-URL = "pricing"
-name = "Pricing"
-weight = 4
-[[languages.en.menu.footer]]
-URL = "faq"
-name = "FAQ"
-weight = 5
-[[languages.en.menu.footer]]
-URL = "contact"
-name = "Contact"
-weight = 6
-[[languages.en.menu.main]]
-hasChildren = true
-name = "More"
-weight = 5
-[languages.fr]
-contentDir = "content/french"
-copyright = "Copyright &copy; 2021 [Themefisher](https://themefisher.com). Tous droits réservés."
-languageCode = "fr-FR"
-languageName = "Français"
-weight = 2
-[[languages.fr.menu.footer]]
-URL = "about"
-name = "À propos"
-weight = 1
-[[languages.fr.menu.footer]]
-URL = "project"
-name = "Projet"
-weight = 2
-[[languages.fr.menu.footer]]
-URL = "service"
-name = "Service"
-weight = 3
-[[languages.fr.menu.footer]]
-URL = "pricing"
-name = "Tarification"
-weight = 4
-[[languages.fr.menu.footer]]
-URL = "faq"
-name = "Questions fréquentes"
-weight = 5
-[[languages.fr.menu.footer]]
-URL = "contact"
-name = "Contact"
-weight = 6
-[[languages.fr.menu.main]]
-hasChildren = true
-name = "Plus"
-weight = 5
-[languages.it]
-contentDir = "content/italian"
-copyright = "Copyright &copy; 2021 [Themefisher](https://themefisher.com). Tutti i diritti riservati."
-languageCode = "it-IT"
-languageName = "Italiano"
-weight = 2
-[[languages.it.menu.footer]]
-URL = "about"
-name = "Chi siamo"
-weight = 1
-[[languages.it.menu.footer]]
-URL = "project"
-name = "Progetto"
-weight = 2
-[[languages.it.menu.footer]]
-URL = "service"
-name = "Servizio"
-weight = 3
-[[languages.it.menu.footer]]
-URL = "pricing"
-name = "Tariffazione"
-weight = 4
-[[languages.it.menu.footer]]
-URL = "faq"
-name = "Domande frequenti"
-weight = 5
-[[languages.it.menu.footer]]
-URL = "contact"
-name = "Contatta"
-weight = 6
-[[languages.it.menu.main]]
-hasChildren = true
-name = "Più"
-weight = 5
+
 [markup.goldmark.renderer]
 unsafe = true
 [markup.tableOfContents]
@@ -187,22 +45,27 @@ description = "This is meta description"
 image = "images/logo.png"
 logo = "images/logo.png"
 logo_width = "150px"
+
 [params.contact]
 address_descriptors = false
-email = "demo@email.com"
-location = "**Themefisher**  \nNorth Main Street  \nBrooklyn, New South Wales  \nAustralia\n"
+email = ""
+location = ""
 phone = "0124857985320"
+
 [params.contact.form]
 action = "#"
 enable = true
 success_image = "images/paper-plane.svg"
 use_netlify = true
+
 [params.cookies]
 enable = true
 expire_days = 2
+
 [params.counter]
 enable = true
 username = ""
+
 [params.gmap]
 enable = true
 gmap_api = "AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"
@@ -245,23 +108,24 @@ link = "https://kit.fontawesome.com/d17d5e5245.js"
 [params.preloader]
 enable = true
 preloader = ""
+
 [params.widgets]
 sidebar = ["recent_posts", "taxonomy_category", "taxonomy_tags"]
 [[params.social]]
-icon = "ion-social-googleplus-outline"
-link = "#"
+icon = "fa fa-envelope"
+link = "mailto:grupo.cidamo@gmail.com"
 [[params.social]]
-icon = "ion-social-linkedin-outline"
-link = "#"
+icon = "fa fa-linkedin"
+link = "https://www.linkedin.com/company/grupo-cidamo"
 [[params.social]]
-icon = "ion-social-pinterest-outline"
-link = "#"
+icon = "fa fa-twitter"
+link = "https://www.twitter.com/grupo_cidamo"
 [[params.social]]
-icon = "ion-social-dribbble-outline"
-link = "#"
+icon = "fa fa-instagram"
+link = "https://www.instagram.com/grupo.cidamo"
 [[params.social]]
-icon = "ion-social-twitter-outline"
-link = "#"
+icon = "fa fa-youtube"
+link = "https://www.youtube.com/GrupoCiDAMO"
 [[params.social]]
-icon = "ion-social-facebook-outline"
-link = "#"
+icon = "fa fa-github"
+link = "https://github.com/CiDAMO"

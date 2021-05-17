@@ -1,0 +1,21 @@
+.footer-menu .social-icons {
+  li {
+    margin: 2px;
+    padding: 0px !important;
+  }
+
+  .fa {
+    font-size: 2em;
+    margin: 2px;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: #1893f8;
+    color: white;
+    transition: 400ms;
+
+    &:hover {
+      background-color: #0927eb;
+      color: gold;
+    }
+  }
+}

@@ -7,5 +7,5 @@ menu:
   main:
     name: "Blog"
     identifier: "blog"
-    weight: 4
+    weight: 5
 ---

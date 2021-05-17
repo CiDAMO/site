@@ -1,0 +1,39 @@
+.eventos-content {
+  margin: 20px 0px 40px 0px;
+
+  p {
+    font-size: 1.5em !important;
+  }
+}
+
+.eventos .evento {
+  margin: 5px;
+  padding: 5px;
+  background-color: #f5f3df;
+  border-radius: 5px;
+  border: 1px solid #dbd8b1;
+}
+
+.evento .col-md-4 {
+  border-right: 2px dashed #999779;
+}
+
+.palestrante {
+  margin-bottom: 10px;
+
+  .palestrante-nome {
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+  }
+
+  .palestrante-desc {
+    font-variant: small-caps;
+  }
+
+  .palestrante-titulo {
+    font-size: 1.1em;
+  }
+  .palestrante-resumo {
+    font-size: 0.8em;
+  }
+}

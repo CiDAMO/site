@@ -1,6 +1,7 @@
 ---
 nome: "Augusto dos Santos Pereira"
 draft: false
+layout: "equipe/single"
 image : "images/equipe/augusto.jpg"
 role: "Colaborador"
 linkedin: augusto-dos-santos-pereira-55678997

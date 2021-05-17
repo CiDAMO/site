@@ -1,6 +1,7 @@
 ---
 nome: "Talia Correia Schulz"
 draft: false
+layout: "equipe/single"
 image : "images/equipe/talia.jpg"
 role: "Aluno pesquisador"
 linkedin: talia-correia-schulz-57593318a

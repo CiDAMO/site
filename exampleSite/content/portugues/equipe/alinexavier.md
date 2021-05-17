@@ -1,6 +1,7 @@
 ---
 nome: "Aline Nascimento Xavier"
 draft: false
+layout: "equipe/single"
 image : "images/equipe/alinexavier.jpg"
 role: "Aluno pesquisador"
 linkedin: aline-x-b6a413b3

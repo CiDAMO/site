@@ -1,6 +1,7 @@
 ---
 nome: "Leonardo Dionizio"
 draft: false
+layout: "equipe/single"
 image : "images/equipe/leonardodionizio.jpg"
 role: "Aluno pesquisador"
 linkedin: 

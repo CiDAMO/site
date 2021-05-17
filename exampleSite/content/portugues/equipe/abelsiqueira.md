@@ -1,6 +1,7 @@
 ---
 nome: "Abel Soares Siqueira"
 draft: false
+layout: "equipe/single"
 image : "images/equipe/abelsiqueira.jpg"
 role: "Coordenador"
 linkedin: abel-siqueira

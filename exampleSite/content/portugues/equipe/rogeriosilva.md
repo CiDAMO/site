@@ -1,6 +1,7 @@
 ---
 nome: "Rogério Otavio Mainardes da Silva"
 draft: false
+layout: "equipe/single"
 image : "images/equipe/rogeriosilva.jpg"
 role: "Aluno pesquisador"
 linkedin: rogério-mainardes-755766169

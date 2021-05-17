@@ -1,6 +1,7 @@
 ---
 nome: "João Victor da Silva"
 draft: false
+layout: "equipe/single"
 image : "images/equipe/joaosilva.jpg"
 role: "Aluno pesquisador"
 linkedin: joao-victor-silva

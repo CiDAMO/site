@@ -1,6 +1,6 @@
 ---
-title: "Latest News"
-description: "this is meta description"
+title: "Posts"
+description: "Anúncios de eventos e andamento dos projetos"
 draft: false
 bg_image: "images/feature-bg.jpg"
 menu:

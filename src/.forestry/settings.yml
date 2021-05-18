@@ -2,17 +2,17 @@
 new_page_extension: md
 auto_deploy: false
 admin_path: ''
-webhook_url: 
+webhook_url:
 sections:
 - type: heading
   label: Homepage
 - type: document
-  path: exampleSite/content/portugues/_index.md
+  path: src/content/portugues/_index.md
   label: Homepage
 - type: heading
   label: Blog Post
 - type: directory
-  path: exampleSite/content/portugues/blog
+  path: src/content/portugues/blog
   label: Post
   create: documents
   match: "**/*"
@@ -21,7 +21,7 @@ sections:
 - type: heading
   label: Author
 - type: directory
-  path: exampleSite/content/portugues/author
+  path: src/content/portugues/author
   label: Author
   create: documents
   match: "**/*"
@@ -30,7 +30,7 @@ sections:
 - type: heading
   label: Project
 - type: directory
-  path: exampleSite/content/portugues/project
+  path: src/content/portugues/project
   label: Project
   create: documents
   match: "**/*"
@@ -39,13 +39,13 @@ sections:
 - type: heading
   label: Other Pages
 - type: directory
-  path: exampleSite/content/portugues
+  path: src/content/portugues
   label: Other Pages
   create: documents
   match: "*"
   exclude: _index.md
 - type: directory
-  path: exampleSite/content/portugues
+  path: src/content/portugues
   label: All Pages
   create: all
   match: "**/*"
@@ -54,19 +54,19 @@ sections:
 - type: heading
   label: Translations
 - type: directory
-  path: exampleSite/i18n
+  path: src/i18n
   label: i18n
   create: documents
   match: "**/*"
 - type: heading
   label: Configuration
 - type: directory
-  path: exampleSite
+  path: src
   label: Configuration
   create: all
   match: "*.toml"
   new_doc_ext: toml
-upload_dir: exampleSite/static/images
+upload_dir: src/static/images
 public_path: "/images"
 front_matter_path: ''
 use_front_matter_path: false
@@ -79,6 +79,6 @@ build:
   preview_docker_image: forestryio/hugo:latest
   mount_path: "/srv"
   working_dir: "/srv"
-  instant_preview_command: cd exampleSite; hugo server --themesDir ../.. -D -E -F
+  instant_preview_command: cd src; hugo server --themesDir ../.. -D -E -F
     --port 8080 --bind 0.0.0.0 --renderToDisk -d public
 version: 0.83.1

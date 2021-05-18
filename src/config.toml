@@ -5,7 +5,7 @@ disqusShortname = ""
 googleAnalytics = ""
 paginate = "4"
 summaryLength = "30"
-theme = "airspace-hugo"
+theme = "site"
 title = "CiDAMO"
 
 [languages.ptbr]

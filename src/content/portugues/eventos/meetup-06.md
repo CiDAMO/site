@@ -1,7 +1,7 @@
 ---
 nome: "6° Meetup do CiDAMO."
 data: 2020-10-29
-image: images/eventos/6o-meetup.jpg
+image: images/eventos/meetup-06.jpg
 draft: false
 breve: "19h00 às 21h30"
 palestrantes:

@@ -9,13 +9,20 @@
 .eventos .evento {
   margin: 5px;
   padding: 5px;
-  background-color: #f5f3df;
+  background-color: #ebebf8;
   border-radius: 5px;
-  border: 1px solid #dbd8b1;
+  border: 1px solid #cbcbc8;
+  position: relative;
 }
 
-.evento .col-md-4 {
-  border-right: 2px dashed #999779;
+.eventos .futuro {
+  border: 2px solid #1893f8;
+}
+
+.eventos .img-futuro {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .palestrante {

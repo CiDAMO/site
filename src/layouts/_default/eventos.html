@@ -11,7 +11,11 @@
     </div>
 
     {{ range sort .Data.Pages "Params.data" "desc" }}
-    <div class="evento">
+    <div class="evento {{ if .Params.futuro }} futuro{{ end }}">
+
+      {{ if .Params.futuro }}
+      <img class="img-futuro" src="/images/eventos/em-breve.png">
+      {{ end }}
       <div class="row">
         <div class="col-md-4">
           <img class="img-responsive w-100" src="{{ .Params.image | relURL }}">

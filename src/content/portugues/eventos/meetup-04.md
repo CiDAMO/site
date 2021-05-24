@@ -1,7 +1,7 @@
 ---
 nome: "4° Meetup do CiDAMO"
 data: 2020-07-30
-image: images/eventos/4o-meetup.jpg
+image: images/eventos/meetup-04.jpg
 draft: false
 breve: "19h00 às 21h30"
 palestrantes:

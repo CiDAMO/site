@@ -1,7 +1,7 @@
 ---
 nome: "5° Meetup do CiDAMO"
 data: 2020-09-24
-image: images/eventos/5o-meetup.jpg
+image: images/eventos/meetup-05.jpg
 draft: false
 breve: "19h00 às 21h30"
 palestrantes:

@@ -1,7 +1,7 @@
 ---
 nome: " CiDAMAS - 1° Meetup"
 data: 2020-08-27
-image: images/eventos/1o-cidamas.jpg
+image: images/eventos/CiDAMAS-01.jpg
 draft: false
 breve: "19h00 às 21h30"
 palestrantes:

@@ -1,5 +1,5 @@
 ---
-nome: "1° Meetup do CiDAMO. [Video](https://youtu.be/rEpzkxuEokA)."
+nome: "1° Meetup do CiDAMO"
 data: 2020-05-14
 image: images/logo-wide.jpg
 draft: false
@@ -8,17 +8,17 @@ palestrantes:
   - nome: "João Manrique"
     desc: "James"
     link: ""
-    titulo: "teligência Artifical, Dados e a Verdade Não Di"
+    titulo: "Inteligência Artifical, Dados e a Verdade Não Dita"
     resumo: ""
   - nome: "Cleibson Almeida"
-    desc: "Deliverey Center"
+    desc: "Delivery Center"
     link: ""
-    titulo: "mpetição Analíti"
+    titulo: "Competição Analítica"
     resumo: ""
   - nome: "Thiago Prado"
     desc: "DFIS - UFPR"
     link: ""
-    titulo: "antificadores de Recorrência e a Entropia Máxima dos Microestados de Recorrênc"
+    titulo: "Quantificadores de Recorrência e a Entropia Máxima dos Microestados de Recorrência"
     resumo: ""
 ---
 1° Meetup do CiDAMO. [Video](https://youtu.be/rEpzkxuEokA).<br><br>19h - 21h30

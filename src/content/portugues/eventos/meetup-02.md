@@ -1,7 +1,7 @@
 ---
 nome: "2° Meetup do CiDAMO"
 data: 2020-06-04
-image: images/eventos/2o-meetup.jpg
+image: images/eventos/meetup-02.jpg
 draft: false
 breve: "19h00 às 21h30"
 palestrantes:

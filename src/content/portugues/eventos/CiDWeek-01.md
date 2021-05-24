@@ -1,7 +1,7 @@
 ---
 nome: "I CiDWeek."
 data: 2020-02-03
-image: images/eventos/I-CiDWeek.jpg
+image: images/eventos/CiDWeek-01.jpg
 draft: false
 palestrantes:
 ---

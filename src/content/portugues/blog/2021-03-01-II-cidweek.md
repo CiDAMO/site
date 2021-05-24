@@ -2,8 +2,8 @@
 title: II CiDWeek
 date: 2021-03-01
 author: Abel Soares Siqueira
-image: images/blog/II-CiDWeek.jpg
-bg_image: images/blog/II-CiDWeek.jpg
+image: images/eventos/CiDWeek-02.jpg
+bg_image: images/eventos/CiDWeek-02.jpg
 categories: ["Eventos"]
 tags: ["CiDWeek"]
 description: Semana de Ciência de Dados

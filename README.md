@@ -1,7 +1,9 @@
-# Build
+# Site do CiDAMO (versão nova em progresso)
 
-Dentro da pasta `src` rodar
+## Build
 
-    hugo server --theme=. --themesDir=..
+Rode
+
+    hugo server
 
 Preview netlify: [https://cidamo.netlify.app](https://cidamo.netlify.app)

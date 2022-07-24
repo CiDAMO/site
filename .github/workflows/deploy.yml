@@ -28,7 +28,7 @@ jobs:
       - name: Build
         run: |
           cd src
-          hugo --minify --theme=. --themesDir=..
+          hugo --minify --theme=. --themesDir=.. --baseURL="https://cidamo.com.br/site/"
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

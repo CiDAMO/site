@@ -6,6 +6,7 @@ googleAnalytics = ""
 ignoreFiles = ['airspace-hugo']
 paginate = "4"
 summaryLength = "30"
+theme="airspace-hugo"
 title = "CiDAMO"
 
 [languages.ptbr]

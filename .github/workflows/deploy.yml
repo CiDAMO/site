@@ -26,12 +26,10 @@ jobs:
           extended: true
 
       - name: Build
-        run: |
-          cd src
-          hugo --minify --theme=. --themesDir=.. --baseURL="https://cidamo.com.br/site/"
+        run: hugo --minify --baseURL="https://cidamo.com.br/site/"
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./src/public
+          publish_dir: ./public

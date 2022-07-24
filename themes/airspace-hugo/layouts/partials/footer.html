@@ -3,14 +3,8 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="footer-menu">
-					<ul class="social-icons">
-						{{ range site.Params.social }}
-						<li><a href="{{ .link | safeURL }}"><i class="{{ .icon }}"></i></a></li>
-						{{ end }}
-					</ul>
-					<br>
 					<ul>
-						{{ range site.Menus.footer }}
+            {{ range site.Menus.footer }}
             <li><a href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
             {{ end }}
 					</ul>
@@ -21,6 +15,13 @@
 	</div>
 </footer>
 
+<!-- Google Maps API -->
+{{ if site.Params.gmap.enable }}
+{{ if ("contact/" | relLangURL | eq .RelPermalink) }}
+<script defer src="https://maps.googleapis.com/maps/api/js?key={{ site.Params.gmap.gmap_api }}&libraries=places"></script>
+{{ end }}
+{{ end }}
+
 <!-- JS plugins -->
 {{ range site.Params.plugins.js }}
 <script src="{{ .link | relURL }}" {{ .attributes | safeHTMLAttr }}></script>
@@ -29,38 +30,6 @@
 <!-- Main script -->
 {{ $script := slice (resources.Get "js/script.js") (resources.Get "js/custom.js") | resources.Concat "js/bundled.js" | minify }}
 <script src="{{ $script.RelPermalink }}"></script>
-
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-<script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$']],
-    processEscapes: true,
-    processEnvironments: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-    TeX: { equationNumbers: { autoNumber: "AMS" },
-         extensions: ["AMSmath.js", "AMSsymbols.js"] }
-  }
-  });
-  MathJax.Hub.Queue(function() {
-    // Fix <code> tags after MathJax finishes running. This is a
-    // hack to overcome a shortcoming of Markdown. Discussion at
-    // https://github.com/mojombo/jekyll/issues/199
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-
-  MathJax.Hub.Config({
-  // Autonumbering by mathjax
-  TeX: { equationNumbers: { autoNumber: "AMS" } }
-  });
-</script>
 
 <!-- Cookie -->
 {{ if site.Params.cookies.enable }}

@@ -1,0 +1,602 @@
+<!doctype html><html lang=pt-br><head>
+<meta charset=utf-8>
+<title>Previsão de Demanda</title>
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name=description content="A previsão de demanda trata-se do processo de antecipar o nível da procura por um determinado produto ou serviço de uma empresa. Então, para estudarmos esse tópico, utilizamos um banco de dados sobre vendas de alguns produtos que, por questões de privacidade, foi mascarado por frutas.">
+<meta name=author content="Themefisher">
+<meta name=generator content="Hugo 0.91.2">
+<meta property="og:image" content="http://cidamo.netlify.app/images/blog/previsao-de-demanda/capa.jpg">
+<meta name=twitter:image content="http://cidamo.netlify.app/images/blog/previsao-de-demanda/capa.jpg">
+<meta name=twitter:card content="summary">
+<meta property="og:image:width" content="1080">
+<meta property="og:image:height" content="1080">
+<meta property="og:image:type" content="image/jpeg">
+<meta name=twitter:title content="Previsão de Demanda">
+<meta name=twitter:description content="A previsão de demanda trata-se do processo de antecipar o nível da procura por um determinado produto ou serviço de uma empresa. Então, para estudarmos esse tópico, utilizamos um banco de dados sobre vendas de alguns produtos que, por questões de privacidade, foi mascarado por frutas.">
+<meta property="og:title" content="Previsão de Demanda">
+<meta property="og:description" content="A previsão de demanda trata-se do processo de antecipar o nível da procura por um determinado produto ou serviço de uma empresa. Então, para estudarmos esse tópico, utilizamos um banco de dados sobre vendas de alguns produtos que, por questões de privacidade, foi mascarado por frutas.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://cidamo.netlify.app/blog/2020-06-16-previsao-de-demanda/"><meta property="article:section" content="blog">
+<meta property="article:published_time" content="2020-06-16T00:00:00+00:00">
+<meta property="article:modified_time" content="2020-06-16T00:00:00+00:00">
+<link rel=stylesheet href=/plugins/bootstrap/css/bootstrap.min.css media=screen>
+<link rel=stylesheet href=/plugins/ionicons/css/ionicons.min.css>
+<link rel=stylesheet href=/plugins/magnific-popup/magnific-popup.min.css>
+<link rel=stylesheet href=/plugins/slick/slick.css>
+<link rel=stylesheet href=/scss/bundled.min.css media=screen>
+<link rel="shortcut icon" href=/images/favicon.png type=image/x-icon>
+<link rel=icon href=/images/favicon.png type=image/x-icon>
+</head>
+<body>
+<div class=preloader>
+</div>
+<header class=navigation>
+<div class=container-fluid>
+<div class=row>
+<div class=col-md-12>
+<nav class=navbar>
+<div class=navbar-header>
+<button type=button class="navbar-toggle collapsed" data-toggle=collapse data-target=#navigation>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+</button>
+<a class=navbar-brand href=/>
+<img src=/images/logo.png alt=CiDAMO width=150px class=img-responsive>
+</a>
+</div>
+<div class="collapse navbar-collapse" id=navigation>
+<ul class="nav navbar-nav navbar-right">
+<li><a href=/>Home</a></li><li><a href=/sobre/>Sobre</a></li><li><a href=/equipe/>Equipe</a></li><li><a href=/eventos/>Eventos</a></li><li><a href=/blog/ class=current-parent>Blog</a></li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+</div>
+</header>
+<section class="page-title bg-2" style=background-image:url(/images/blog/previsao-de-demanda/capa.jpg)>
+<div class=container>
+<div class=row>
+<div class=col-md-12>
+<div class=block>
+<h1>Previsão de Demanda</h1>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class=page-wrapper>
+<div class=container>
+<div class=row>
+<div class=col-md-8>
+<div class="post post-single">
+<h2 class=post-title>Previsão de Demanda</h2>
+<div class=post-meta>
+<ul>
+<li><i class=ion-calendar></i> June 16, 2020</li>
+<li><i class=ion-android-people></i>
+Postado por
+<a class=text-primary href=/author/julia-nishihiro>Julia Nishihiro</a>, <a class=text-primary href=/author/rafael-dias>Rafael Dias</a>, <a class=text-primary href=/author/rafael-oliveira>Rafael Oliveira</a>, <a class=text-primary href=/author/rodrigo-marba>Rodrigo Marba</a>, <a class=text-primary href=/author/talia-schulz>Talia Schulz</a>
+</li>
+<li><i class=ion-pricetags></i>
+<a href=/tags/regress%c3%a3o>Regressão</a>, <a href=/tags/previs%c3%a3o>Previsão</a>
+</li>
+</ul>
+</div>
+<div class=post-thumb>
+<img class=img-responsive src=/images/blog/previsao-de-demanda/capa.jpg alt="Previsão de Demanda">
+</div>
+<div class="post-content post-excerpt">
+<p>A previsão de demanda trata-se do processo de antecipar o nível da procura por um determinado produto ou serviço de uma empresa. Então, para estudarmos esse tópico, utilizamos um banco de dados sobre vendas de alguns produtos que, por questões de privacidade, foi mascarado por frutas.</p>
+<p>Além do domínio das técnicas de modelagem, é de suma importância a compreensão dos fatores que influenciam a receita da venda desses produtos. Assim, a partir de uma visão holística, podemos determinar as <em>features</em> do modelo.</p>
+<p>Começamos com as variáveis macroeconômicas como a taxa básica de juros - a SELIC. A baixa desta taxa influencia a renda per capta e consequentemente o consumo, resultando em maior demanda dos produtos que estamos estudando. Outro fator que potencialmente pode ser incluído no modelo é a densidade populacional.</p>
+<p>É intuitivo pensar que a demanda está diretamente relacionada a este fator, no entanto depende também do perfil demográfico. Percebemos que alguns fatores como o gênero, a idade e a renda determinam se o perfil estará predisposto a consumir um determinado produto em detrimento de outros.</p>
+<p>Nos tópicos seguintes faremos uma contextualização do problema a ser modelado, onde englobaremos uma análise em cima do banco de dados e as modificações feitas nesse conjunto. Logo após, falaremos sobre o método utilizado na previsão da demanda e faremos uma breve análise dos resultados obtidos.</p>
+<h2 id=contextualização-do-problema>Contextualização do Problema</h2>
+<p>Podemos visualizar na tabela abaixo, uma amostra do conjunto de dados,</p>
+<table>
+<thead>
+<tr>
+<th>Ano</th>
+<th>Semana</th>
+<th>Canal Comercial</th>
+<th>UF</th>
+<th>Código IBGE</th>
+<th>Município</th>
+<th>Produto</th>
+<th>Valor</th>
+<th>Volume</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td>1</td>
+<td>AZUL</td>
+<td>BA</td>
+<td>2900702</td>
+<td>Alagoinhas</td>
+<td>Maçã</td>
+<td>20.561924</td>
+<td>1.125896</td>
+</tr>
+<tr>
+<td>2017</td>
+<td>1</td>
+<td>AZUL</td>
+<td>BA</td>
+<td>2901106</td>
+<td>Amélia Rodrigues</td>
+<td>Maçã</td>
+<td>14.527124</td>
+<td>0.716479</td>
+</tr>
+<tr>
+<td>2017</td>
+<td>1</td>
+<td>AZUL</td>
+<td>BA</td>
+<td>2901700</td>
+<td>Antônio Cardoso</td>
+<td>Maçã</td>
+<td>36.827021</td>
+<td>2.047083</td>
+</tr>
+<tr>
+<td>2017</td>
+<td>1</td>
+<td>AZUL</td>
+<td>BA</td>
+<td>2902609</td>
+<td>Baixa Grande</td>
+<td>Maçã</td>
+<td>32.530194</td>
+<td>1.842375</td>
+</tr>
+<tr>
+<td>2017</td>
+<td>1</td>
+<td>AZUL</td>
+<td>BA</td>
+<td>2905701</td>
+<td>Camaçari</td>
+<td>Maçã</td>
+<td>60.866940</td>
+<td>3.377687</td>
+</tr>
+</tbody>
+</table>
+<p>Neste conjunto há mais de 4 milhões de linhas, e contém:</p>
+<ul>
+<li>2 canais comerciais: azul e verde</li>
+<li>Mais de 4500 municípios</li>
+<li>14 produtos</li>
+<li>As semanas de 2017, 2018 e 2019</li>
+</ul>
+<p>O que queremos prever são os Valores e os Volumes de cada semana de 2019 com base nas semanas de 2017 e 2018.</p>
+<h4 id=análise-dos-dados>Análise dos dados</h4>
+<p>Visualizando o comportamento do volume de cada produto,</p>
+<figure><img src=/img/previsao-de-demanda/volume-por-fruta.png><figcaption>
+<h4>Relação de Volume dos produtos por Ano</h4>
+</figcaption>
+</figure>
+<p>podemos perceber que a quantidade de cada produto é bem variada, e que a Tangerina, Melancia e o Caqui não aparecem em todos os anos.</p>
+<p>A imagem abaixo representa a média do volume total por estado, é possível notar que o estado de SP e MG, possuem a maior demanda de produtos.</p>
+<figure><img src=/img/previsao-de-demanda/volume-por-estado.png><figcaption>
+<h4>Relação da média do Volume total por Estado</h4>
+</figcaption>
+</figure>
+<p>Analisando a cidade de Curitiba com o produto Banana, percebemos que há uma diferença significativa entre os dois canais de compra.
+Não apenas pelo volume, mas também o comportamento de cada canal é diferente, e esse padrão se repete nos demais municípios.</p>
+<figure><img src=/img/previsao-de-demanda/dif-canal-comercial.png><figcaption>
+<h4>Comparação entre os dois canais de compra, com o produto 'Banana' na cidade de Curitiba</h4>
+</figcaption>
+</figure>
+<p>Olhando agora para os produtos, ao analisarmos o seu comportamento verificamos que os produtos também tem características diferentes, como podemos visualizar nas imagens abaixo.</p>
+<p><figure><img src=/img/previsao-de-demanda/banana.png><figcaption>
+<h4>Volume do produto 'Banana' no ano de 2017</h4>
+</figcaption>
+</figure>
+<figure><img src=/img/previsao-de-demanda/manga.png><figcaption>
+<h4>Volume do produto 'Manga' no ano de 2017</h4>
+</figcaption>
+</figure>
+<figure><img src=/img/previsao-de-demanda/lim%c3%a3o.png><figcaption>
+<h4>Volume do produto 'Limão' no ano de 2017</h4>
+</figcaption>
+</figure>
+</p>
+<h2 id=modificações>Modificações</h2>
+<p>A fim de obtermos uma melhor modelagem, retiramos as três frutas - Tangerina, Melancia e Caqui - que não apareciam nos três anos. Além da retirada de alguns municípios que não apareciam mais de 52 vezes, também removemos a previsão de Valor, uma vez que os dois possíveis <em>targets</em> - Valor e Volume - possuem alta correlação.</p>
+<p>Por outro lado, para cada observação, que corresponde a uma semana, adicionamos</p>
+<ul>
+<li>A população correspondente a cada município;</li>
+<li>Se houve greve naquela semana;</li>
+<li>Se é período festivo ou não;</li>
+<li>Uma numeração para cada semana, pela ordem do volume média de 2017 e 2019.</li>
+</ul>
+<p>Sabe-se que períodos festivos podem impulsionar a demanda nesses intervalos. Adicionamos essa variável com alguns feriados, os quais são: o dia das mães, o dia dos namorados, a <em>Black Friday</em> e o natal. Não colocamos todos os feriados nacionais pois observamos que apenas os feriados mencionados apresentaram um aumento significativo no Volume dos produtos. Também refletimos que as semanas que possuem maiores volumes devem possuir um maior foco, visto que são esses períodos que deveríamos prever a possível subida nas vendas, sendo eles feriados ou não.</p>
+<p>Por outro lado, greves - como a greve dos caminhoneiros de maio à junho de 2018, bem como fenômenos que interrompam a cadeia de suprimentos - podem influenciar a oferta dos produtos e, assim, dimininundo a demanda destes itens.</p>
+<p>Infelizmente não conseguimos adicionar a taxa Selic ou o IDH de cada município. Uma vez que o conjunto de dados é de apenas 3 anos, não visualizamos uma melhora no modelo ao adicionar estes dois fatores.</p>
+<h2 id=principal-abordagem-do-estudo>Principal abordagem do estudo</h2>
+<p>Entre as abordagens que utilizamos para resolver o problema de previsão de demanda, o Gradient Boosting com Janela Temporal e com Defasagem de uma semana foi o que obteve o melhor resultado.</p>
+<h3 id=validação-de-séries-temporais-janela-de-expansão>Validação de Séries Temporais: Janela de Expansão</h3>
+<p>Para obter um melhor resultado em nosso modelo utilizamos um método de validação de séries temporais chamado janela temporal. Existem dois tipos, a janela deslizante, utilizada em séries temporais diárias e horárias, e a janela de expansão, que é usada com mais frequência em séries temporais semanais, mensais ou trimestrais. Devido a natureza dos nossos dados utilizaremos a janela de expansão. Para essa validação são requeridos quatro hiperparâmetros,</p>
+<ul>
+<li>Tamanho da janela inicial;</li>
+<li>Tamanho da janela final;</li>
+<li>Tamanho da janela de previsão;</li>
+<li>Incremento da expansão da janela.
+Abaixo temos um exemplo visual do método,</li>
+</ul>
+<figure><img src=/img/previsao-de-demanda/janela-expansiva.png><figcaption>
+<h4>Visualização do método Janela Expansiva. Imagem tirada de [4]</h4>
+</figcaption>
+</figure>
+<p>Podemos observar que nesse método, a cada passo utiliza mais dados que o anterior para o treino do modelo, enquanto que o intervalo de predição é fixo.</p>
+<h3 id=defasagem>Defasagem</h3>
+<p>Para adicionar o efeito temporal em nosso modelo de Gradient Boosting adicionamos em nosso conjunto de dados uma defasagem semanal. Por exemplo, quando olhamos para uma determinada semana estaremos olhando também para a os dados da semana anterior. Assim, para essa modificação utilizaremos a função <em>shift</em>. Abaixo temos um exemplo para a cidade de São Paulo, canal comercial azul com o produto banana.</p>
+<table>
+<thead>
+<tr>
+<th>Volume</th>
+<th>Ano</th>
+<th>Semana</th>
+<th>Peso Semana</th>
+<th>Feriado</th>
+<th>Greve</th>
+<th>Volume1</th>
+<th>Ano1</th>
+<th>Semana1</th>
+<th>Peso Semana1</th>
+<th>Feriado1</th>
+<th>Greve1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>445.957011</td>
+<td>2017</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<td>757.727738</td>
+<td>2017</td>
+<td>2</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>445.957011</td>
+<td>2017</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>729.170931</td>
+<td>2017</td>
+<td>3</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>757.727738</td>
+<td>2017</td>
+<td>2</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>664.278403</td>
+<td>2017</td>
+<td>4</td>
+<td>7</td>
+<td>0</td>
+<td>0</td>
+<td>729.170931</td>
+<td>2017</td>
+<td>3</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>803.889458</td>
+<td>2017</td>
+<td>5</td>
+<td>12</td>
+<td>0</td>
+<td>0</td>
+<td>664.278403</td>
+<td>2017</td>
+<td>4</td>
+<td>7</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>&mldr;</td>
+<td>&mldr;</td>
+<td>&mldr;</td>
+<td>&mldr;</td>
+<td>&mldr;</td>
+<td>&mldr;</td>
+<td>&mldr;</td>
+<td>&mldr;</td>
+<td>&mldr;</td>
+<td>&mldr;</td>
+<td>&mldr;</td>
+<td>&mldr;</td>
+</tr>
+</tbody>
+</table>
+<p>Onde Volume1, Ano1, Semana1, Peso Semana1, feriado1 e greve1, correspondem aos dados da semana anterior.</p>
+<h3 id=gradient-boosting>Gradient Boosting</h3>
+<p>É um modelo ensemble do pacote sklearn. Ele consiste basicamente em um modelo aditivo que utiliza aprendizes fracos, normalmente árvores de decisão, e uma função perda para ser otimizada a fim de construir um modelo forte. O método possui diversos parâmetros para serem otimizados, porém para esse problema aperfeiçoaremos os seguintes,</p>
+<ul>
+<li><code>n_estimators</code>: número de árvores;</li>
+<li><code>max_depth</code>: número de nós de cada árvore;</li>
+<li><code>learning_rate</code>: taxa de aprendizado;</li>
+<li><code>max_features</code>: quantidade de features usada para fazer a divisão de cada nó da árvore.</li>
+</ul>
+<p>Para fazer essa otimização utilizamos o Grid Search e obtivemos como resultados: <code>max_depth=2</code>, <code>learning_rate=0.05</code>, <code>max_features=log2</code>. Note que o <code>n_estimator</code> não está presente na lista anterior, isso porque vamos otimizá-lo para cada cidade, dentro do próprio algoritmo de previsão.</p>
+<h3 id=resultado-e-comparação>Resultado e Comparação</h3>
+<p>Para compararmos o método proposto utilizaremos o Gradient Boosting sem janela temporal e sem defasagem, onde apenas otimizamos seus parâmetros da mesma forma que foi feita com o modelo proposto. Os resultados para cada método podem ser observados na tabela a seguir.</p>
+<table>
+<thead>
+<tr>
+<th>C.C. VERDE</th>
+<th>GB</th>
+<th>GB_Janela</th>
+<th>C.C. AZUL</th>
+<th>GB</th>
+<th>GB_Janela</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Abacate</td>
+<td>0.76</td>
+<td>0.87</td>
+<td>Abacate</td>
+<td>0.6</td>
+<td>0.72</td>
+</tr>
+<tr>
+<td>Banana</td>
+<td>0.91</td>
+<td>0.95</td>
+<td>Banana</td>
+<td>0.84</td>
+<td>0.90</td>
+</tr>
+<tr>
+<td>Kiwi</td>
+<td>0.71</td>
+<td>0.88</td>
+<td>Kiwi</td>
+<td>0.48</td>
+<td>0.59</td>
+</tr>
+<tr>
+<td>Laranja</td>
+<td>0.75</td>
+<td>0.78</td>
+<td>Laranja</td>
+<td>0.62</td>
+<td>0.74</td>
+</tr>
+<tr>
+<td>Limão</td>
+<td>0.04</td>
+<td>0.71</td>
+<td>Limão</td>
+<td>0.1</td>
+<td>0.73</td>
+</tr>
+<tr>
+<td>Maçã</td>
+<td>0.81</td>
+<td>0.85</td>
+<td>Maçã</td>
+<td>0.35</td>
+<td>0.76</td>
+</tr>
+<tr>
+<td>Mamão</td>
+<td>0.86</td>
+<td>0.91</td>
+<td>Mamão</td>
+<td>0.55</td>
+<td>0.64</td>
+</tr>
+<tr>
+<td>Manga</td>
+<td>0.47</td>
+<td>0.63</td>
+<td>Manga</td>
+<td>0.06</td>
+<td>0.08</td>
+</tr>
+<tr>
+<td>Pera</td>
+<td>0.57</td>
+<td>0.67</td>
+<td>Pera</td>
+<td>0.26</td>
+<td>0.33</td>
+</tr>
+<tr>
+<td>Pêssego</td>
+<td>0.89</td>
+<td>0.92</td>
+<td>Pêssego</td>
+<td>0.48</td>
+<td>0.51</td>
+</tr>
+<tr>
+<td>Uva</td>
+<td>0.62</td>
+<td>0.70</td>
+<td>Uva</td>
+<td>0.42</td>
+<td>0.47</td>
+</tr>
+</tbody>
+</table>
+<p>Podemos destacar o Limão, que em ambos os canais comerciais obteve um aumento de aproximadamente 0.7 no R2. Um exemplo mais visual pode ser observado abaixo, previmos o Volume das semanas de 2019 do produto Abacate, no canal comercial Azul da cidade de Belo Horizonte. Sendo o gráfico azul o Volume real, e o gráfico laranja a previsão do Gradient Boosting sem janela temporal e sem defasagem.</p>
+<figure><img src=/img/previsao-de-demanda/grad.png><figcaption>
+<h4>Relação entre o Volume e a predição do Gradient Boosting sem janela temporal e sem defasagem no ano de 2019. Produto 'Abacate', no canal comercial Azul da cidade de Belo Horizonte</h4>
+</figcaption>
+</figure>
+<p>Da mesma maneira, o gráfico azul é o Volume real, enquanto que o gráfico laranja é o Gradient Boosting com janela temporal e com defasagem.</p>
+<figure><img src=/img/previsao-de-demanda/grad_janela.png><figcaption>
+<h4>Relação entre o Volume e a predição do Gradient Boosting com janela temporal e com defasagem no ano de 2019. Produto 'Abacate', no canal comercial Azul da cidade de Belo Horizonte</h4>
+</figcaption>
+</figure>
+<p>Além do visual,podemos verificamos que o R2 de cada método foi:</p>
+<ul>
+<li>Gradient Boosting sem janela temporal e sem defasagem: 0.13</li>
+<li>Gradient Boosting com janela temporal e com defasagem: 0.7</li>
+</ul>
+<p>Pode-se notar que o Gradient Boosting com janela temporal e defasagem obteve uma melhora significativa com relação ao seu adversário.</p>
+<p>Outras abordagens poderiam ter sido utilizadas para a modelagem do problema em questão, entretanto por questões de tempo não foram realizadas, são elas,</p>
+<ul>
+<li>Implementação de métodos de séries temporais que contemplem variáveis exógenas : VARMAX e Panel Regression;</li>
+<li>Redes neurais com arquitetura recorrente ou com memória (LSTM);</li>
+<li>Abordagem Híbrida de Séries Temporais + ANN.</li>
+</ul>
+<h2 id=referências>Referências</h2>
+<ul>
+<li>[1] BERGMEIR, C.; HYNDMAN, R.J.;KOO, B. - A Note on the Validity of Cross-Validation for Evaluating Time Series Prediction; Monash university, 2015.</li>
+<li>[2] KHANDELWAL, I.; ADHIKARI, R; VERMA, G. - “Time Series Forecasting using Hybrid ARIMA and ANN Models based on DWT Decomposition”, ICCC, 2015.</li>
+<li>[3] ZHANG, G. P. - “Time series forecasting using a hybrid ARIMA and neural network model”; Neurocomputing 50, p . 159 – 175, 2005.</li>
+<li>[4] BELL, F.; SMYL, S. - &ldquo;Forecasting at Uber: An Introduction&rdquo;. Disponível em: <a href=https://eng.uber.com/forecasting-introduction/>https://eng.uber.com/forecasting-introduction/</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class=col-md-4>
+<aside class=sidebar><div class="widget widget-latest-post">
+<h4 class=widget-title>Últimos Posts</h4>
+<div class=media>
+<a class=pull-left href=/blog/2021-05-17-postmortem-da-2a-cidweek/>
+<img class=media-object src=/images/blog/PostMortem.jpg alt="Postmortem da 2ª CiDWeek">
+</a>
+<div class=media-body>
+<h4 class=media-heading><a href=/blog/2021-05-17-postmortem-da-2a-cidweek/>Postmortem da 2ª CiDWeek</a></h4>
+<p>Olá novamente. Espero que você tenha gostado da 2ª …</p>
+</div>
+</div>
+<div class=media>
+<a class=pull-left href=/blog/2021-03-01-ii-cidweek/>
+<img class=media-object src=/images/eventos/CiDWeek-02.jpg alt="II CiDWeek">
+</a>
+<div class=media-body>
+<h4 class=media-heading><a href=/blog/2021-03-01-ii-cidweek/>II CiDWeek</a></h4>
+<p>Entre os dias 26 e 30 de abril o CiDAMO irá …</p>
+</div>
+</div>
+<div class=media>
+<a class=pull-left href=/blog/2020-09-20-hacktoberfest-2020/>
+<img class=media-object src=/images/blog/hacktoberfest-2020.jpg alt="Hacktoberfest 2020">
+</a>
+<div class=media-body>
+<h4 class=media-heading><a href=/blog/2020-09-20-hacktoberfest-2020/>Hacktoberfest 2020</a></h4>
+<p>Você conhece o Hacktoberfest?
+Vídeo apresentando …</p>
+</div>
+</div>
+<div class=media>
+<a class=pull-left href=/blog/2020-07-27-reviews-de-restaurantes/>
+<img class=media-object src=/images/blog/review-restaurantes/capa.jpg alt="Análise de sentimentos em reviews de restaurantes">
+</a>
+<div class=media-body>
+<h4 class=media-heading><a href=/blog/2020-07-27-reviews-de-restaurantes/>Análise de sentimentos em reviews de restaurantes</a></h4>
+<p>O presente projeto busca usar técnicas de machine …</p>
+</div>
+</div>
+</div>
+<div class="widget widget-category">
+<h4 class=widget-title>Categorias</h4>
+<ul class=widget-category-list>
+<li><a href=/categories/eventos/>Eventos</a></li>
+<li><a href=/categories/novidades/>Novidades</a></li>
+<li><a href=/categories/projetos/>Projetos</a></li>
+</ul>
+</div>
+<div class="widget widget-tag">
+<h4 class=widget-title>Tags</h4>
+<ul class=widget-tag-list>
+<li><a href=/tags/cidweek/>CiDWeek</a></li>
+<li><a href=/tags/classifica%C3%A7%C3%A3o/>Classificação</a></li>
+<li><a href=/tags/hacktoberfest/>Hacktoberfest</a></li>
+<li><a href=/tags/postmortem/>PostMortem</a></li>
+<li><a href=/tags/previs%C3%A3o/>Previsão</a></li>
+<li><a href=/tags/regress%C3%A3o/>Regressão</a></li>
+<li><a href=/tags/sele%C3%A7%C3%A3o/>Seleção</a></li>
+<li><a href=/tags/site/>Site</a></li>
+</ul>
+</div>
+</aside>
+</div>
+</div>
+</div>
+</section>
+<footer class=footer>
+<div class=container>
+<div class=row>
+<div class=col-md-12>
+<div class=footer-menu>
+<ul class=social-icons>
+<li><a href=mailto:grupo.cidamo@gmail.com><i class="fa fa-envelope"></i></a></li>
+<li><a href=https://www.linkedin.com/company/grupo-cidamo><i class="fa fa-linkedin"></i></a></li>
+<li><a href=https://www.twitter.com/grupo_cidamo><i class="fa fa-twitter"></i></a></li>
+<li><a href=https://www.instagram.com/grupo.cidamo><i class="fa fa-instagram"></i></a></li>
+<li><a href=https://www.youtube.com/GrupoCiDAMO><i class="fa fa-youtube"></i></a></li>
+<li><a href=https://github.com/CiDAMO><i class="fa fa-github"></i></a></li>
+</ul>
+<br>
+<ul>
+<li><a href=/sobre>Sobre</a></li>
+<li><a href=/equipe>Equipe</a></li>
+<li><a href=/eventos>Eventos</a></li>
+<li><a href=/blog>Blog</a></li>
+</ul>
+</div>
+<p class=copyright>Copyright © 2021 Abel Soares Siqueira</p>
+</div>
+</div>
+</div>
+</footer>
+<script src=/plugins/jquery/jquery.min.js></script>
+<script src=/plugins/bootstrap/js/bootstrap.min.js></script>
+<script src=/plugins/slick/slick.min.js></script>
+<script src=/plugins/magnific-popup/magnific-popup.min.js></script>
+<script src=/plugins/shuffle/shuffle.min.js></script>
+<script src=/plugins/google-map/gmap.js defer></script>
+<script src=https://kit.fontawesome.com/d17d5e5245.js></script>
+<script src=/js/bundled.min.js></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script>
+<script type=text/javascript async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">MathJax.Hub.Config({tex2jax:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$']],processEscapes:!0,processEnvironments:!0,skipTags:['script','noscript','style','textarea','pre'],TeX:{equationNumbers:{autoNumber:"AMS"},extensions:["AMSmath.js","AMSsymbols.js"]}}}),MathJax.Hub.Queue(function(){var b=MathJax.Hub.getAllJax(),a;for(a=0;a<b.length;a+=1)b[a].SourceElement().parentNode.className+=' has-jax'}),MathJax.Hub.Config({TeX:{equationNumbers:{autoNumber:"AMS"}}})</script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js></script>
+<div id=js-cookie-box class="cookie-box cookie-box-hide">
+This site uses cookies. By continuing to use this website, you agree to their use. <span id=js-cookie-button class="btn btn-main btn-solid-border">I Accept</span>
+</div>
+<script>(function(c){const a=document.getElementById('js-cookie-box'),b=document.getElementById('js-cookie-button');Cookies.get('cookie-box')||(a.classList.remove('cookie-box-hide'),b.onclick=function(){Cookies.set('cookie-box',!0,{expires:2}),a.classList.add('cookie-box-hide')})})(jQuery)</script>
+<style>.cookie-box{position:fixed;left:0;right:0;bottom:0;text-align:center;z-index:9999;padding:1rem 2rem;background:#474747;transition:all .75s cubic-bezier(.19,1,.22,1);color:#fdfdfd}.cookie-box-hide{display:none}</style>
+</body>
+</html>

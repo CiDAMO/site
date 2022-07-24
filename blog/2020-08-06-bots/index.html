@@ -1,0 +1,439 @@
+<!doctype html><html lang=pt-br><head>
+<meta charset=utf-8>
+<title>Identificação de Bots no Twitter</title>
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name=description content="Este projeto foi proposto pelo grupo CIDAMO – UFPR como 3ª atividade avaliativa para ingresso no grupo. O propósito desta atividade é o estudo e o desenvolvimento de um tema utilizando técnicas de machine learning e nós iremos abordar a identificação de bots no Twitter PT-BR.">
+<meta name=author content="Themefisher">
+<meta name=generator content="Hugo 0.91.2">
+<meta property="og:image" content="http://cidamo.netlify.app/images/blog/twitter-bot/capa.jpg">
+<meta name=twitter:image content="http://cidamo.netlify.app/images/blog/twitter-bot/capa.jpg">
+<meta name=twitter:card content="summary">
+<meta property="og:image:width" content="1080">
+<meta property="og:image:height" content="1080">
+<meta property="og:image:type" content="image/jpeg">
+<meta name=twitter:title content="Identificação de Bots no Twitter">
+<meta name=twitter:description content="Este projeto foi proposto pelo grupo CIDAMO – UFPR como 3ª atividade avaliativa para ingresso no grupo. O propósito desta atividade é o estudo e o desenvolvimento de um tema utilizando técnicas de machine learning e nós iremos abordar a identificação de bots no Twitter PT-BR.">
+<meta property="og:title" content="Identificação de Bots no Twitter">
+<meta property="og:description" content="Este projeto foi proposto pelo grupo CIDAMO – UFPR como 3ª atividade avaliativa para ingresso no grupo. O propósito desta atividade é o estudo e o desenvolvimento de um tema utilizando técnicas de machine learning e nós iremos abordar a identificação de bots no Twitter PT-BR.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://cidamo.netlify.app/blog/2020-08-06-bots/"><meta property="article:section" content="blog">
+<meta property="article:published_time" content="2020-07-27T00:00:00+00:00">
+<meta property="article:modified_time" content="2020-07-27T00:00:00+00:00">
+<link rel=stylesheet href=/plugins/bootstrap/css/bootstrap.min.css media=screen>
+<link rel=stylesheet href=/plugins/ionicons/css/ionicons.min.css>
+<link rel=stylesheet href=/plugins/magnific-popup/magnific-popup.min.css>
+<link rel=stylesheet href=/plugins/slick/slick.css>
+<link rel=stylesheet href=/scss/bundled.min.css media=screen>
+<link rel="shortcut icon" href=/images/favicon.png type=image/x-icon>
+<link rel=icon href=/images/favicon.png type=image/x-icon>
+</head>
+<body>
+<div class=preloader>
+</div>
+<header class=navigation>
+<div class=container-fluid>
+<div class=row>
+<div class=col-md-12>
+<nav class=navbar>
+<div class=navbar-header>
+<button type=button class="navbar-toggle collapsed" data-toggle=collapse data-target=#navigation>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+</button>
+<a class=navbar-brand href=/>
+<img src=/images/logo.png alt=CiDAMO width=150px class=img-responsive>
+</a>
+</div>
+<div class="collapse navbar-collapse" id=navigation>
+<ul class="nav navbar-nav navbar-right">
+<li><a href=/>Home</a></li><li><a href=/sobre/>Sobre</a></li><li><a href=/equipe/>Equipe</a></li><li><a href=/eventos/>Eventos</a></li><li><a href=/blog/ class=current-parent>Blog</a></li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+</div>
+</header>
+<section class="page-title bg-2" style=background-image:url(/images/blog/twitter-bot/capa.jpg)>
+<div class=container>
+<div class=row>
+<div class=col-md-12>
+<div class=block>
+<h1>Identificação de Bots no Twitter</h1>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class=page-wrapper>
+<div class=container>
+<div class=row>
+<div class=col-md-8>
+<div class="post post-single">
+<h2 class=post-title>Identificação de Bots no Twitter</h2>
+<div class=post-meta>
+<ul>
+<li><i class=ion-calendar></i> July 27, 2020</li>
+<li><i class=ion-android-people></i>
+Postado por
+<a class=text-primary href=/author/aline-nascimento-xavier>Aline Nascimento Xavier</a>, <a class=text-primary href=/author/jo%C3%A3o-pedro-kincheski-fassina>João Pedro Kincheski Fassina</a>, <a class=text-primary href=/author/pedro-luiz-de-souza-moreira>Pedro Luiz de Souza Moreira</a>
+</li>
+<li><i class=ion-pricetags></i>
+<a href=/tags/classifica%c3%a7%c3%a3o>Classificação</a>
+</li>
+</ul>
+</div>
+<div class=post-thumb>
+<img class=img-responsive src=/images/blog/twitter-bot/capa.jpg alt="Identificação de Bots no Twitter">
+</div>
+<div class="post-content post-excerpt">
+<p>Este projeto foi proposto pelo grupo CIDAMO – UFPR como 3ª atividade avaliativa para ingresso no grupo.
+O propósito desta atividade é o estudo e o desenvolvimento de um tema utilizando técnicas de machine learning e nós iremos abordar a identificação de bots no Twitter PT-BR.</p>
+<h2 id=introdução>Introdução</h2>
+<p>O Twitter possui 330 milhões de usuários ativos mensalmente no mundo todo, e a quantidade exata de bots é desconhecida. Estima-se que o número de contas falsas varia entre 5% a 15%, e essa discordância nas porcentagens acontece pois os bots estão cada vez mais sofisticados.</p>
+<p>Por definição bots são aplicações de softwares que tentam simular ações humanas e são programados a realizar tarefas repetidas vezes. Os bots são classificados entre benignos e malignos, o primeiro consiste em capturar mídias e realizar serviços ao consumidor, enquanto o segundo possui características de difusão de informações, verídicas ou não, na rede.</p>
+<p>Neste trabalho nos iremos abordar os bots sociais, que tentam se passar por humanos, geram e consomem informação da rede, podem possuir assinaturas temporais e apresentam interações avançadas, como conversas, respostas e comentários com outras contas que não necessariamente são falsas.</p>
+<iframe width=560 height=315 src=https://www.youtube.com/embed/wAG0ARdGXIE frameborder=0 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<ul>
+<li>Descrição do Problema</li>
+<li>Quais foram as ações tomadas no projeto</li>
+</ul>
+<p>E mais, você encontra no vídeo acima!</p>
+<h2 id=problema>Problema</h2>
+<p>Na última década o uso da internet em campanhas eleitorais se tornou comum ao redor do mundo e o uso das redes sociais na disseminação de informações políticas virou negócio para as agências de marketing digital. Neste cenário vários estudos foram desenvolvidos na identificação de bots. O Bot Sentinel foi desenvolvido para identificar contas falsas no Twitter, e em abril deste ano a plataforma americana identificou pela primeira vez o uso massivo de bots brasileiros para alavancagem de assuntos.</p>
+<figure><img src=https://ogimg.infoglobo.com.br/brasil/24392165-597-805/FT1086A/652/xbolsonaro-pronunciamento.png.pagespeed.ic.DR74QcJWYw.jpg><figcaption>
+<h4>Imagem da Noticia - Presidente Jair Bolsonaro em um discurso junto a seu ministério Fonte: [1] </h4>
+</figcaption>
+</figure>
+<p>Essa publicação foi o ponto de partida deste projeto que tem como objetivo detectar a presença de bots entre hashtags do Twitter.</p>
+<h2 id=análise-descritiva>Análise Descritiva</h2>
+<iframe width=560 height=315 src=https://www.youtube.com/embed/Wd9TKsq-eYo frameborder=0 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h3 id=obtenção-do-banco-de-dados>Obtenção do Banco de Dados</h3>
+<p>Após a publicação do Bot Sentinel nós precisávamos de uma ferramenta que capturasse os tweets diretamente do Twitter referente as hashtags citadas no artigo, entre as hashtags mencionadas decidimos trabalhar com a #FechadosComBolsonaro que era a mais popular e possuía um volume muito grande de tweets.</p>
+<p>Para a captura dos tweets utilizamos o pacote Rtweet no RStudio, que possui algumas limitações, por exemplo, os resultados das pesquisas retornam apenas de seis a nove dias anteriores e possui o limitante de 18.000 tweets em 15 minutos, e mesmo com essas restrições conseguimos capturar 1,1 milhão de status da hashtag #FechadosComBolsonaro publicados no Twitter entre os dias 21 a 25 de abril de 2020 que correspondem a 102 mil usuários.</p>
+<p>Assim conseguimos criar uma base de dados bruta com 1,1 milhão de linhas e com 90 colunas com informações da conta de usuário, relacionamento com outras contas, conteúdos dos status e outros metadados.</p>
+<p>Além da captura dos status/tweets, também precisávamos de um target para dizer se uma conta era ou não bot, para isso utilizamos o pacote BotorNot também no RStudio. O pacote utiliza deep learning para analisar metadados de usuários e tweets e retorna a probabilidade da conta ser bot. Quando utiliza os metadados e os tweets o modelo do pacote possui uma acurácia de 93,53% para classificar bots, porém a análise dos tweets é muito custosa computacionalmente e o idioma interfere no resultado quando diferente do inglês, por isso decidimos utilizar o recurso do pacote que só analisa os metadados do usuário, fazendo com que analise 90 mil perfis a cada 15 minutos ao invés de 180, porém a acurácia cai para 91,9%.</p>
+<p>Para tornar a nossa base em um problema de classificação escolhemos limiares para classificar as contas, usuários com uma probabilidade maior que 70% foram classificados como bot e usuários com uma probabilidade menor de 30% foram classificados como humanos, no final ficamos com 25 mil usuários bots e 37 mil pessoas daqueles 102 mil usuários iniciais.</p>
+<p><strong>Links Para as Bases de dados</strong></p>
+<ul>
+<li><a href="https://drive.google.com/file/d/132ci7hTI-aObNnW38idZ9IPtUd-jULRP/view?usp=sharing">Todos os Status + Probabilidades <strong>Base #FechadoscomBolsonaro</strong></a></li>
+<li><a href="https://drive.google.com/drive/folders/1E4E_5A57rOfr3BnHOaXRHUibRrj_SSWJ?usp=sharing">Base Trending Topics Extras
+</a> - Até 36000 status mais recentes, dos Trending Topics relacionados à política nacional entre 11/04/2020 e 18/04/2020. A coleta foi feita manualmente utilizando o site <a href=https://www.trendsmap.com/>https://www.trendsmap.com/</a></li>
+<li>Não disponibilizamos a classificação manual, caso queira ter acesso a esse e outros dados, entre em contato conosco pelo e-mail do CiDAMO.</li>
+</ul>
+<h3 id=tratamento-das-variáveis>Tratamento das Variáveis</h3>
+<p>Inicialmente a nossa base possuía 90 features e continha informações de vários tweets de um mesmo perfil, mas o objetivo era avaliar o usuário, por isso criamos algumas variáveis e realizamos tratamentos na base para que cada linha contivesse o agrupamento de dados de uma respectiva conta, para criar essas novas features consideramos vários trabalhos acadêmicos que constam na bibliografia. Abaixo apresentamos a lista de variáveis que utilizamos nos nossos modelos.</p>
+<p><strong>Usuário</strong></p>
+<ul>
+<li>Nome de Usuário possui mais de 4 números</li>
+<li>Nome de Usuário possui tamanho maior que a média do tamanho de nomes de usuário na base</li>
+<li>Conta possui localização</li>
+<li>Conta possui descrição</li>
+<li>Possui Emoji no Nome</li>
+<li>Possui emoji na descrição</li>
+<li>Possui Avatar Padrão</li>
+<li>Possui Capa Padrão</li>
+</ul>
+<p><strong>Conteúdo</strong></p>
+<ul>
+<li>Fonte - <strong>Ordinal Encoding</strong> - Apenas fontes do Twitter, ou Outros, por frequência (1ª aparição na base)</li>
+<li>Quantidade de # nos status da base</li>
+<li>Quantidade de @ nos status da base</li>
+</ul>
+<p><strong>Rede</strong></p>
+<ul>
+<li>Quantidade de Retweets da Conta</li>
+<li>Quantidade de Tweets na Base</li>
+<li>Quantidade de Status da Conta</li>
+<li>Quantidade de Favoritos da Conta</li>
+<li>Taxa Tweets/Favoritos</li>
+<li>Quantidade de Tweets Duplicados na base</li>
+<li>CoParticipação em <a href="https://drive.google.com/drive/folders/1E4E_5A57rOfr3BnHOaXRHUibRrj_SSWJ?usp=sharing">71 hashtags</a></li>
+</ul>
+<p><strong>Amigos</strong></p>
+<ul>
+<li>Possui menos de 10 seguidores</li>
+<li>Taxa Seguidores/Seguidos</li>
+<li>Quantidade de vezes listado</li>
+<li>Quantidade de Seguidores</li>
+<li>Quantidade de Seguidos</li>
+</ul>
+<p><strong>Tempo</strong></p>
+<ul>
+<li>Tempo entre primeiro e último tweet na base</li>
+<li>Tempo de Conta em dias</li>
+</ul>
+<p>Abaixo você encontra a relação de correlação das variáveis em relação à classificação em bot ou não</p>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQuf6hIRiEWFw6vJiBwTFbqMjQaYfyhxOVZ6qEyAYzt0qd_jxIJ6SDsKBXh1MQ8HX1x_18gKdt9kCp4/pubhtml?gid=0&single=true&widget=true&headers=false" width=720 height=480></iframe>
+<h2 id=metodologia>Metodologia</h2>
+<iframe width=560 height=315 src=https://www.youtube.com/embed/jl3ZOLPMI3w frameborder=0 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h3 id=modelos>Modelos</h3>
+<p>Foram utilizados 4 modelos diferentes neste projeto sendo eles:</p>
+<ul>
+<li><a href=https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.SGDClassifier.html>SGD</a></li>
+<li><a href=https://www.tensorflow.org/learn>Rede Neural - TensorFlow</a></li>
+<li><a href=https://xgboost.readthedocs.io/en/latest/>XGBoost</a></li>
+<li><a href=https://lightgbm.readthedocs.io/en/latest/>LightGBM</a></li>
+</ul>
+<h4 id=sgd---gradiente-descendente-estocástico>SGD - Gradiente Descendente Estocástico</h4>
+<p>É um método iterativo que tem o objetivo de reduzir uma função de perda e achar um minimizador, segue a mesma ideia do Gradiente Descendente porém neste método ao invés de utilizar todos os seus dados para calcular o gradiente se utiliza mini-batches, que são alguns ou apenas um dado do seu conjunto todo, deste modo temos que calcular muito menos derivadas, economizando bastante tempo. O que se perde ao escolher apenas alguns é que se tem um caminho muito mais ruidoso.</p>
+<figure><img src=https://media.geeksforgeeks.org/wp-content/uploads/gdp.png><figcaption>
+<h4>Caminho feito pelo Gradiente Descendente Fonte: [2] </h4>
+</figcaption>
+</figure>
+<figure><img src=https://media.geeksforgeeks.org/wp-content/uploads/sgd-1.jpg><figcaption>
+<h4>Caminho feito pelo Gradiente Descendente Estocástico Fonte: [3] </h4>
+</figcaption>
+</figure>
+<h4 id=redes-neurais>Redes Neurais</h4>
+<p>Uma rede neural tem como objetivo simular a tomada de decisões de um ser humano e isso é feito “emulando” os seus neurônios.</p>
+<p>Comumente uma rede vai ser composta de uma camada de entrada, que é por onde os dados entram, cada uma das features vai para um neurônio que vai passá-la para frente aplicando uma função a ela, assim como em todas as outras camadas intermediárias do processo, e por fim ela chega a uma camada de saída que devolve o resultado.</p>
+<figure><img src=https://sites.icmc.usp.br/andre/research/neural/image/camadas_an.gif><figcaption>
+<h4>Organização em Camadas de uma Rede Neural Fonte: [4] </h4>
+</figcaption>
+</figure>
+<p>Essencialmente é assim que uma rede neural funciona de um modo bem básico e simplificado, existem múltiplos parâmetros a serem configurados que vão depender principalmente de qual biblioteca se está utilizando e de qual é o seu objetivo.
+Neste projeto foi utilizada a biblioteca TensorFlow com camadas densas.</p>
+<h4 id=light-gbm-e-xg-boost>Light GBM e XG Boost</h4>
+<p>Ambos são algoritmos de gradient boosting que utilizam as árvores de decisão como base, as árvores funcionam como grandes sequências de condicionais (nós) que separam os dados pelas suas features sequencialmente até que se chegue aos nós finais, que decidem qual é a categoria.</p>
+<figure><img src="https://i1.wp.com/www.vooo.pro/insights/wp-content/uploads/2016/12/RDS-Vooo_insights-Tutorial_arvore_de_decisao_02.jpg?resize=768%2C446&ssl=1"><figcaption>
+<h4>Estrutura de uma árvore de decisão Fonte: [5] </h4>
+</figcaption>
+</figure>
+<h5 id=gradient-boosting>Gradient boosting</h5>
+<p>Começa-se com uma aprendizagem fraca, que neste caso são as árvores, e com o objetivo de minimizar a função de perda elas começam com o aprendizado, cada árvore após a primeira utiliza a sua antecessora olhando para os erros que ela fez e tenta corrigi-los, isto é feito até que se alcance alguma condição de parada.</p>
+<p>Uma das principais diferenças entre o Light GBM e o XGBoost é a forma como as suas árvores são formadas, as do GBM crescem por folha enquanto que as do XG crescem por nível, isso faz com que ele consiga melhorar a sua precisão ainda mais por iteração.</p>
+<figure><img src=https://miro.medium.com/max/1400/1*L8Q9sb4uLZbA7kn9E_FkKQ.png><figcaption>
+<h4>Crescimento por nível e Crescimento por folha Fonte: [6] </h4>
+</figcaption>
+</figure>
+<h2 id=resultados>Resultados</h2>
+<iframe width=560 height=315 src=https://www.youtube.com/embed/I73qZ4VP5Ow frameborder=0 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>Nos dividimos aleatoriamente a nossa base de 62 mil usuários classificados em bots e humanos em 70% treino e o restante em teste.</p>
+<p>Utilizando os modelos treinados na fase de treino obtivemos as acurácias mostradas na tabela abaixo na fase de teste. A **Tabela 1 **mostra que entre os 4 modelos utilizamos o LightGBM seguido pelo XGBoost apresentaram a melhor acurácia.</p>
+<table>
+<thead>
+<tr>
+<th>Modelo</th>
+<th>Escore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SGD</td>
+<td>0.6476</td>
+</tr>
+<tr>
+<td>LightGB</td>
+<td>0.9476</td>
+</tr>
+<tr>
+<td>XGBoos</td>
+<td>0.9247</td>
+</tr>
+<tr>
+<td>Redes Neurais</td>
+<td>0.8419</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tabela 1</strong>
+validação
+Para maior validação dos nossos modelos, criamos uma base de contas verificadas manualmente pela equipe, selecionamos 100 usuários aleatórios que foram retirados de uma captura da hashtag #MaiaTraidorNacional, desses classificamos 32 como sendo bots e 68 como humanos. Nesta base os modelos treinados performaram de maneira diferente, como mostra a <strong>Tabela 2</strong>, onde combinados o escore com o recall podemos ver que os melhores modelos foram SGD e XGBoost, que classificaram boa parte dos bots corretamente, e em contrapartida tivemos as redes neurais errando 100% na classificação dos bots.</p>
+<table>
+<thead>
+<tr>
+<th>Modelo</th>
+<th>Escore</th>
+<th>Recall</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SGD</td>
+<td>0.5454</td>
+<td>0.71875</td>
+</tr>
+<tr>
+<td>LightGBM</td>
+<td>0.5151</td>
+<td>0.46875</td>
+</tr>
+<tr>
+<td>XGBoost</td>
+<td>0.5252</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Redes Neurais</td>
+<td>0.5656</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tabela 2</strong></p>
+<p>Apenas essas métricas não foram o suficiente para avaliarmos os modelos, para compreendermos melhor como cada modelo estava classificando utilizamos a matriz a confusão que mostra os valores reais e os valores preditos pelo modelo.</p>
+<p>{% include confusion_matrix.html titulo=&ldquo;Matriz de confusão&rdquo; VP=&ldquo;VP&rdquo; VN=&ldquo;VN&rdquo; FP=&ldquo;FP&rdquo; FN=&ldquo;FN&rdquo; >}}</p>
+<ul>
+<li>VP – Verdadeiros positivos (humanos)</li>
+<li>FP – Falsos positivos (humanos classificados com bots)</li>
+<li>FN – Falsos negativos (bots classificados como humanos)</li>
+<li>VN – Verdadeiros negativos (bots)</li>
+</ul>
+<div class=row>
+<div class="col-md-3 col-sm-6 col-xs-12">
+{% include confusion_matrix.html titulo="LGBM" VP="40" FP="27" FN="17" VN="15" >}}
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+{% include confusion_matrix.html titulo="SGD" VP="31" FP="36" FN="9" VN="23" >}}
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+{% include confusion_matrix.html titulo="XGBoost" VP="0" FP="67" FN="0" VN="32" >}}
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+{% include confusion_matrix.html titulo="TensorFlow" VP="67" FP="0" FN="32" VN="0" >}}
+</div>
+</div>
+<p>Olhando para matriz de confusão de cada modelo mostrado abaixo, podemos verificar que os modelos XGboost e as Redes Neurais classificaram todo o conjunto de dados em bots e humanos respectivamente, mostrando um péssimo desempenho. Já o modelo LightGBM conseguiu classificar melhor os humanos enquanto o SGD conseguiu classificar melhor os bots.</p>
+<h2 id=conclusão>Conclusão</h2>
+<p>Fica claro pelos dados apresentados nos resultados que os modelos performaram de maneiras muito diferentes da base de treino com a base de validação. A hipótese que consideramos que justifica esses resultados é o target usado. Na base de treino utilizamos a biblioteca BotOrNot e na base de validação classificamos as contas manualmente, fato que gerou muitas controvérsias na equipe, uma vez que a classificação das contas era muito subjetiva e sujeita a várias interpretações para cada avaliador.</p>
+<p>Considerando essa dificuldade na classificação manual dos usuários e os resultados obtidos na base de treino, levantamos a hipótese que existe uma chance grande do modelo LightGBM estar classificando melhor os bots do que a análise manual.</p>
+<p><strong>Últimas versões do Notebook</strong></p>
+<ul>
+<li><a href="https://drive.google.com/file/d/1eRMCzk97pUjf8TIXd9REjfEBRlsE7TVC/view?usp=sharing">Notebook - 07/05/2020</a></li>
+<li><a href="https://drive.google.com/file/d/1rjjk5sBHjtRgCPVWRJElPQ4oLS2q4qOL/view?usp=sharing">Notebook - 30/04/2020</a></li>
+<li><a href="https://drive.google.com/file/d/1RWvt0E5jxmUAhKYlI3-ZvfYbzZQQIWIU/view?usp=sharing">Notebook - 23/04/2020</a></li>
+</ul>
+<h3 id=referências>Referências</h3>
+<ul>
+<li>[1] <a href=https://oglobo.globo.com/brasil/plataforma-que-monitora-robos-aponta-presenca-macica-de-contas-falsas-entre-apoiadores-de-bolsonaro-24399334>https://oglobo.globo.com/brasil/plataforma-que-monitora-robos-aponta-presenca-macica-de-contas-falsas-entre-apoiadores-de-bolsonaro-24399334</a></li>
+<li>[2] <a href=https://www.geeksforgeeks.org/ml-stochastic-gradient-descent-sgd/>https://www.geeksforgeeks.org/ml-stochastic-gradient-descent-sgd/</a></li>
+<li>[3] <a href=https://www.geeksforgeeks.org/ml-stochastic-gradient-descent-sgd/>https://www.geeksforgeeks.org/ml-stochastic-gradient-descent-sgd/</a></li>
+<li>[4] <a href=https://sites.icmc.usp.br/andre/research/neural/>https://sites.icmc.usp.br/andre/research/neural/</a></li>
+<li>[5] <a href=https://www.vooo.pro/insights/um-tutorial-completo-sobre-a-modelagem-baseada-em-tree-arvore-do-zero-em-r-python/>https://www.vooo.pro/insights/um-tutorial-completo-sobre-a-modelagem-baseada-em-tree-arvore-do-zero-em-r-python/</a></li>
+<li>[6] <a href=https://towardsdatascience.com/lightgbm-vs-xgboost-which-algorithm-win-the-race-1ff7dd4917d>https://towardsdatascience.com/lightgbm-vs-xgboost-which-algorithm-win-the-race-1ff7dd4917d</a></li>
+<li>[7] E. Ferrara, O. Varol, C. Davis, F. Menczer, A. Flammini.(2014). &ldquo;The Rise of Social Bots&rdquo;. Disponível em: <a href=https://arxiv.org/abs/1407.5225>https://arxiv.org/abs/1407.5225</a></li>
+<li>[8] Emerging Technology from the arXiv. (2014). &ldquo;How To Spot A Social Bot On Twitter&rdquo;. Disponível em <a href=https://www.technologyreview.com/2014/07/28/74316/how-to-spot-a-social-bot-on-twitter/>https://www.technologyreview.com/2014/07/28/74316/how-to-spot-a-social-bot-on-twitter/</a></li>
+<li>[9] RUEDIGER, M. A. et al. (Ed.) (2018). Bots, Social Networks and Politics in Brazil:
+Analysis of interferences made by automated profiles in the 2014 elections. Policy
+Paper. Rio de Janeiro: FGV DAPP. Disponível em <a href="http://bibliotecadigital.fgv.br/dspace/themes/Mirage2/pages/pdfjs/web/viewer.html?file=http://bibliotecadigital.fgv.br/dspace/bitstream/handle/10438/24841/%5bFINAL%5d%20Bots-socialnetworks-and-politics-in-brazil.pdf?sequence=1&isAllowed=y">http://bibliotecadigital.fgv.br/dspace/themes/Mirage2/pages/pdfjs/web/viewer.html?file=http://bibliotecadigital.fgv.br/dspace/bitstream/handle/10438/24841/%5bFINAL%5d%20Bots-socialnetworks-and-politics-in-brazil.pdf?sequence=1&isAllowed=y</a></li>
+<li>[10] Varol, Onur & Ferrara, Emilio & Davis, Clayton & Menczer, Filippo & Flammini, Alessandro. (2017). Online Human-Bot Interactions: Detection, Estimation, and Characterization. Disponivel em: <a href=https://www.researchgate.net/publication/314433388_Online_Human-Bot_Interactions_Detection_Estimation_and_Characterization>https://www.researchgate.net/publication/314433388_Online_Human-Bot_Interactions_Detection_Estimation_and_Characterization</a></li>
+<li>[11] Efthimion, P. George; Payne, Scott; and Proferes, Nicholas (2018) &ldquo;Supervised Machine Learning Bot Detection Techniques to Identify Social Twitter Bots,&rdquo; SMU Data Science Review: Vol. 1 : No. 2 , Article 5. Disponivel em: <a href=https://scholar.smu.edu/datasciencereview/vol1/iss2/5>https://scholar.smu.edu/datasciencereview/vol1/iss2/5</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class=col-md-4>
+<aside class=sidebar><div class="widget widget-latest-post">
+<h4 class=widget-title>Últimos Posts</h4>
+<div class=media>
+<a class=pull-left href=/blog/2021-05-17-postmortem-da-2a-cidweek/>
+<img class=media-object src=/images/blog/PostMortem.jpg alt="Postmortem da 2ª CiDWeek">
+</a>
+<div class=media-body>
+<h4 class=media-heading><a href=/blog/2021-05-17-postmortem-da-2a-cidweek/>Postmortem da 2ª CiDWeek</a></h4>
+<p>Olá novamente. Espero que você tenha gostado da 2ª …</p>
+</div>
+</div>
+<div class=media>
+<a class=pull-left href=/blog/2021-03-01-ii-cidweek/>
+<img class=media-object src=/images/eventos/CiDWeek-02.jpg alt="II CiDWeek">
+</a>
+<div class=media-body>
+<h4 class=media-heading><a href=/blog/2021-03-01-ii-cidweek/>II CiDWeek</a></h4>
+<p>Entre os dias 26 e 30 de abril o CiDAMO irá …</p>
+</div>
+</div>
+<div class=media>
+<a class=pull-left href=/blog/2020-09-20-hacktoberfest-2020/>
+<img class=media-object src=/images/blog/hacktoberfest-2020.jpg alt="Hacktoberfest 2020">
+</a>
+<div class=media-body>
+<h4 class=media-heading><a href=/blog/2020-09-20-hacktoberfest-2020/>Hacktoberfest 2020</a></h4>
+<p>Você conhece o Hacktoberfest?
+Vídeo apresentando …</p>
+</div>
+</div>
+<div class=media>
+<a class=pull-left href=/blog/2020-07-27-reviews-de-restaurantes/>
+<img class=media-object src=/images/blog/review-restaurantes/capa.jpg alt="Análise de sentimentos em reviews de restaurantes">
+</a>
+<div class=media-body>
+<h4 class=media-heading><a href=/blog/2020-07-27-reviews-de-restaurantes/>Análise de sentimentos em reviews de restaurantes</a></h4>
+<p>O presente projeto busca usar técnicas de machine …</p>
+</div>
+</div>
+</div>
+<div class="widget widget-category">
+<h4 class=widget-title>Categorias</h4>
+<ul class=widget-category-list>
+<li><a href=/categories/eventos/>Eventos</a></li>
+<li><a href=/categories/novidades/>Novidades</a></li>
+<li><a href=/categories/projetos/>Projetos</a></li>
+</ul>
+</div>
+<div class="widget widget-tag">
+<h4 class=widget-title>Tags</h4>
+<ul class=widget-tag-list>
+<li><a href=/tags/cidweek/>CiDWeek</a></li>
+<li><a href=/tags/classifica%C3%A7%C3%A3o/>Classificação</a></li>
+<li><a href=/tags/hacktoberfest/>Hacktoberfest</a></li>
+<li><a href=/tags/postmortem/>PostMortem</a></li>
+<li><a href=/tags/previs%C3%A3o/>Previsão</a></li>
+<li><a href=/tags/regress%C3%A3o/>Regressão</a></li>
+<li><a href=/tags/sele%C3%A7%C3%A3o/>Seleção</a></li>
+<li><a href=/tags/site/>Site</a></li>
+</ul>
+</div>
+</aside>
+</div>
+</div>
+</div>
+</section>
+<footer class=footer>
+<div class=container>
+<div class=row>
+<div class=col-md-12>
+<div class=footer-menu>
+<ul class=social-icons>
+<li><a href=mailto:grupo.cidamo@gmail.com><i class="fa fa-envelope"></i></a></li>
+<li><a href=https://www.linkedin.com/company/grupo-cidamo><i class="fa fa-linkedin"></i></a></li>
+<li><a href=https://www.twitter.com/grupo_cidamo><i class="fa fa-twitter"></i></a></li>
+<li><a href=https://www.instagram.com/grupo.cidamo><i class="fa fa-instagram"></i></a></li>
+<li><a href=https://www.youtube.com/GrupoCiDAMO><i class="fa fa-youtube"></i></a></li>
+<li><a href=https://github.com/CiDAMO><i class="fa fa-github"></i></a></li>
+</ul>
+<br>
+<ul>
+<li><a href=/sobre>Sobre</a></li>
+<li><a href=/equipe>Equipe</a></li>
+<li><a href=/eventos>Eventos</a></li>
+<li><a href=/blog>Blog</a></li>
+</ul>
+</div>
+<p class=copyright>Copyright © 2021 Abel Soares Siqueira</p>
+</div>
+</div>
+</div>
+</footer>
+<script src=/plugins/jquery/jquery.min.js></script>
+<script src=/plugins/bootstrap/js/bootstrap.min.js></script>
+<script src=/plugins/slick/slick.min.js></script>
+<script src=/plugins/magnific-popup/magnific-popup.min.js></script>
+<script src=/plugins/shuffle/shuffle.min.js></script>
+<script src=/plugins/google-map/gmap.js defer></script>
+<script src=https://kit.fontawesome.com/d17d5e5245.js></script>
+<script src=/js/bundled.min.js></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script>
+<script type=text/javascript async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">MathJax.Hub.Config({tex2jax:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$']],processEscapes:!0,processEnvironments:!0,skipTags:['script','noscript','style','textarea','pre'],TeX:{equationNumbers:{autoNumber:"AMS"},extensions:["AMSmath.js","AMSsymbols.js"]}}}),MathJax.Hub.Queue(function(){var b=MathJax.Hub.getAllJax(),a;for(a=0;a<b.length;a+=1)b[a].SourceElement().parentNode.className+=' has-jax'}),MathJax.Hub.Config({TeX:{equationNumbers:{autoNumber:"AMS"}}})</script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js></script>
+<div id=js-cookie-box class="cookie-box cookie-box-hide">
+This site uses cookies. By continuing to use this website, you agree to their use. <span id=js-cookie-button class="btn btn-main btn-solid-border">I Accept</span>
+</div>
+<script>(function(c){const a=document.getElementById('js-cookie-box'),b=document.getElementById('js-cookie-button');Cookies.get('cookie-box')||(a.classList.remove('cookie-box-hide'),b.onclick=function(){Cookies.set('cookie-box',!0,{expires:2}),a.classList.add('cookie-box-hide')})})(jQuery)</script>
+<style>.cookie-box{position:fixed;left:0;right:0;bottom:0;text-align:center;z-index:9999;padding:1rem 2rem;background:#474747;transition:all .75s cubic-bezier(.19,1,.22,1);color:#fdfdfd}.cookie-box-hide{display:none}</style>
+</body>
+</html>

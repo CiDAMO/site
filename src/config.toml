@@ -3,9 +3,9 @@ defaultContentLanguage = "ptbr"
 disableLanguages = []
 disqusShortname = ""
 googleAnalytics = ""
+ignoreFiles = ['airspace-hugo']
 paginate = "4"
 summaryLength = "30"
-theme = "site"
 title = "CiDAMO"
 
 [languages.ptbr]

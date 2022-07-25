@@ -1,0 +1,45 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+
+<section class="eventos">
+  <div class="container">
+
+    <div class="eventos-content text-center">
+      {{ .Content }}
+    </div>
+
+    {{ range sort .Data.Pages "Params.data" "desc" }}
+    <div class="evento">
+      <div class="row">
+        <div class="col-md-4">
+          <img class="img-responsive w-100" src="{{ .Params.image | relURL }}">
+        </div>
+        <div class="col-md-8">
+          <div class="evento-details">
+            <h4>{{ .Params.nome }}</h4>
+            <div class="evento-content mt-10">
+              {{ .Content }}
+            </div>
+            <div class="evento-palestrantes">
+              {{ range .Params.palestrantes }}
+                <div class="palestrante">
+                  <span class="palestrante-nome">{{ .nome }}</span>,
+                  <span class="palestrante-desc">{{ .desc }}</span>
+                  <div>
+                    Título: <span class="palestrante-titulo">{{ .titulo }}</span>
+                    <p class="palestrante-resumo text-justify">{{ .resumo }}</p>
+                  </div>
+                </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+{{ end }}

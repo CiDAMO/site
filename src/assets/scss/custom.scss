@@ -1,0 +1,26 @@
+// Put custom SCSS rules in this file
+// Documentation: https://sass-lang.com/documentation
+
+@import url(https://fonts.googleapis.com/css?family=Nunito);
+
+// Navigation - Topo da página - Cabeçalho - Links do topo
+.navigation {
+  background-color: #1893f8;
+  a {
+    color: rgb(250, 226, 10) !important;
+  }
+  .current {
+    color: white !important;
+  }
+}
+
+// Banner
+h1 {
+  font-family: Nunito, sans-serif;
+}
+
+@import '_equipe.scss';
+
+@import '_eventos.scss';
+
+@import '_footer.scss';

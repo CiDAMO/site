@@ -1,0 +1,131 @@
+baseURL = "http://cidamo.netlify.app"
+defaultContentLanguage = "ptbr"
+disableLanguages = []
+disqusShortname = ""
+googleAnalytics = ""
+paginate = "4"
+summaryLength = "30"
+theme = "site"
+title = "CiDAMO"
+
+[languages.ptbr]
+contentDir = "content/portugues"
+copyright = "Copyright &copy; 2021 Abel Soares Siqueira"
+languageCode = "pt-BR"
+languageName = "Português"
+weight = 1
+[[languages.ptbr.menu.footer]]
+URL = "sobre"
+name = "Sobre"
+weight = 1
+[[languages.ptbr.menu.footer]]
+URL = "equipe"
+name = "Equipe"
+weight = 2
+[[languages.ptbr.menu.footer]]
+URL = "eventos"
+name = "Eventos"
+weight = 3
+[[languages.ptbr.menu.footer]]
+URL = "blog"
+name = "Blog"
+weight = 4
+
+[markup.goldmark.renderer]
+unsafe = true
+[markup.tableOfContents]
+endLevel = 6
+ordered = false
+startLevel = 2
+[outputs]
+home = ["HTML"]
+[params]
+author = "Themefisher"
+description = "This is meta description"
+image = "images/logo.png"
+logo = "images/logo.png"
+logo_width = "150px"
+
+[params.contact]
+address_descriptors = false
+email = ""
+location = ""
+phone = "0124857985320"
+
+[params.contact.form]
+action = "#"
+enable = true
+success_image = "images/paper-plane.svg"
+use_netlify = true
+
+[params.cookies]
+enable = true
+expire_days = 2
+
+[params.counter]
+enable = true
+username = ""
+
+[params.gmap]
+enable = true
+gmap_api = "AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"
+map_latitude = "51.5223477"
+map_longitude = "-0.1622023"
+map_marker = "images/marker.png"
+[[params.plugins.css]]
+attributes = "media='screen'"
+link = "plugins/bootstrap/css/bootstrap.min.css"
+[[params.plugins.css]]
+attributes = ""
+link = "plugins/ionicons/css/ionicons.min.css"
+[[params.plugins.css]]
+attributes = ""
+link = "plugins/magnific-popup/magnific-popup.min.css"
+[[params.plugins.css]]
+attributes = ""
+link = "plugins/slick/slick.css"
+[[params.plugins.js]]
+attributes = ""
+link = "plugins/jquery/jquery.min.js"
+[[params.plugins.js]]
+attributes = ""
+link = "plugins/bootstrap/js/bootstrap.min.js"
+[[params.plugins.js]]
+attributes = ""
+link = "plugins/slick/slick.min.js"
+[[params.plugins.js]]
+attributes = ""
+link = "plugins/magnific-popup/magnific-popup.min.js"
+[[params.plugins.js]]
+attributes = ""
+link = "plugins/shuffle/shuffle.min.js"
+[[params.plugins.js]]
+attributes = "defer"
+link = "plugins/google-map/gmap.js"
+[[params.plugins.js]]
+attributes = ""
+link = "https://kit.fontawesome.com/d17d5e5245.js"
+[params.preloader]
+enable = true
+preloader = ""
+
+[params.widgets]
+sidebar = ["recent_posts", "taxonomy_category", "taxonomy_tags"]
+[[params.social]]
+icon = "fa fa-envelope"
+link = "mailto:grupo.cidamo@gmail.com"
+[[params.social]]
+icon = "fa fa-linkedin"
+link = "https://www.linkedin.com/company/grupo-cidamo"
+[[params.social]]
+icon = "fa fa-twitter"
+link = "https://www.twitter.com/grupo_cidamo"
+[[params.social]]
+icon = "fa fa-instagram"
+link = "https://www.instagram.com/grupo.cidamo"
+[[params.social]]
+icon = "fa fa-youtube"
+link = "https://www.youtube.com/GrupoCiDAMO"
+[[params.social]]
+icon = "fa fa-github"
+link = "https://github.com/CiDAMO"
